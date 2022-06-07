@@ -8,11 +8,11 @@ function Tile(props){
 
     return (
         <div className="pigTile">
-            <img src={image} className="ui eight wide column"></img>
+            <img src={image} ></img>
             <h3 className="hoggyText">
                 {name}
             </h3>
-            <ul className="ui eight wide column">
+            <ul>
                 <li>Specialty: {specialty}</li>
                 <li>Weight: {weight}</li>
                 <li>Greased: {greased.tostring}</li>

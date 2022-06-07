@@ -1,12 +1,18 @@
 import react from "react";
 
-function DisplayForm(textChange, text) {
+function DisplayForm({formText, textChange}) {
+
+    console.log(formText)
+    function changeText(e){
+        textChange(e.target.value)
+    }
+
 return(
     <div>
         <form>
             <label>
             Search
-                <input type="text" name="search" placeholder="Enter name or weight" value={text} onChange={()=>textChange} />
+                <input type="text" name="search" placeholder="Enter name or weight" value={formText} onChange={changeText} />
             </label>
             <label>
             Greased?

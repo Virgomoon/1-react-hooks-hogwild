@@ -11,7 +11,7 @@ function TileList({hogList, text}){
     )
 
 return (
-    <div className="ui grid container">
+    <div>
         { allHogs }
     </div>
     

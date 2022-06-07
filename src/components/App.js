@@ -9,15 +9,16 @@ function App() {
 
 	const [formText, setFormText] = useState("")
 
-	function handleFormText(e){
-		console.log(e.target.value)
-		setFormText(e.target.value)
+	function handleFormText(input){
+		// console.log(e.target.value)
+		setFormText(input)
+		
 	}
 
 	return (
 		<div className="App">
 			<Nav />
-			<DisplayForm text={formText} textChange={handleFormText} />
+			<DisplayForm formText={formText} textChange={handleFormText} />
 			<TileList text={formText} hogList = {hogs} />
 		</div>
 	);
