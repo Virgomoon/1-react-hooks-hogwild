@@ -3,7 +3,6 @@ import Tile from "./Tile";
 
 function TileList({hogList, text}){
 
-    console.log(text)
     const allHogs = hogList.map((hog) => (
     <Tile key={hog.name} hogInfo={hog}
      />
