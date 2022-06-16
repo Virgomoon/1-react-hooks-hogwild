@@ -1,24 +1,11 @@
-import react from "react";
+import React from "react";
 
-function DisplayForm({formText, textChange, toggleGreased, greased}) {
+function DisplayForm({ toggleGreased, greased, onSortName}) {
 
-    console.log(formText)
-    function changeText(e){
-        textChange(e.target.value)
-    }
-
-    // function checkGrease(e){
-    //     e.target.checked
-    //     greased()
-    // }
 
 return(
-    <div>
-        <form>
-            <label>
-            Search
-                <input type="text" name="search" placeholder="Enter name or weight" value={formText} onChange={changeText} />
-            </label>
+    <div className="form">
+        <form >
             <label>
                 Greased?
                 <select name="Show-Greased-Only"
@@ -28,8 +15,16 @@ return(
                     <option value="Yes">Yes</option>
                 </select>
             </label>
-            <input type="submit" value="Search" />
-        </form>
+            <label>
+            Sort
+                <select name="Sort-By-Name-or-Weight"
+                onChange={onSortName}>
+                    <option></option>
+                    <option value="Name">Name</option>
+                    <option value="Weight">Weight</option>
+                </select>
+            </label>
+        </form >
     </div>
 )
 }

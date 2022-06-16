@@ -1,4 +1,5 @@
-import react, {useState} from "react";
+import React, {useState} from "react";
+import {Card, Image} from "semantic-ui-react"
 
 function Tile(props){
 
@@ -6,28 +7,29 @@ function Tile(props){
     const {greased, image, name, specialty, weight} = props.hogInfo;
     const medal = props.hogInfo['highest medal achieved'];
     
-    const [cardHide, setCardHide] = useState("hidden");
+    const [cardHide, setCardHide] = useState(true);
 
     const showGrease = greased === true ? "Greased" : null
 
     function changeClass() {
-       setCardHide("hidden" ? "" : "hidden")
+       setCardHide((cardHide)=> !cardHide)
+
     }
 
 
     return (
-        <div className="pigTile" onClick={changeClass}>
-            <img src={image} ></img>
+        <Card className="pigTile" onClick={changeClass}>
+            <Image src={image} ></Image>
             <h3 className="hoggyText">
                 {name}
             </h3>
-            <ul className={cardHide}>
+            <ul className={cardHide ? "hidden" : ""}>
                 <li>Specialty: {specialty}</li>
                 <li>Weight: {weight}</li>
                 <li>Highest Medal Achieved: {medal}</li>
                 <li>{showGrease}</li>
             </ul>
-        </div>
+        </Card>
     )
 }
 
